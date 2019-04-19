@@ -1,0 +1,72 @@
+CREATE DATABASE village;
+
+
+-- 마을정보
+CREATE TABLE village_info(
+VILAGE_ID varchar(255) not null primary key,
+VILAGE_NM varchar(255),
+VILAGE_SLGN varchar(255),
+VILAGE_HMPG_ENNC varchar(255),
+VILAGE_HMPG_URL varchar(255),
+VILAGE_KND_CD varchar(255),
+VILAGE_KND_NM varchar(255),
+FNCT_CD varchar(255),
+FNCT_NM varchar(255),
+THEMA_SE_CD varchar(255),
+THEMA_NM varchar(255),
+VILAGE_RPRSNTV_NM varchar(255),
+VILAGE_RPRSNTV_TELNO varchar(255),
+VILAGE_RPRSNTV_MOBLPHON varchar(255),
+VILAGE_RPRSNTV_EMAIL varchar(255),
+PRCAFS_MAN_NM varchar(255),
+PRCAFS_MAN_TELNO varchar(255),
+PRCAFS_MAN_MOBLPHON varchar(255),
+PRCAFS_MAN_EMAIL varchar(255),
+ADDR1 varchar(255),
+ADDR2 varchar(255),
+ZIP varchar(255),
+VILAGE_FCLTY_CD varchar(255),
+VILAGE_FCLTY_NM varchar(255),
+VILAGE_INTRCN longtext,
+USE_GUIDANCE longtext,
+SCN_ORGN longtext,
+PREVEW longtext,
+EXPRN_GUIDANCE longtext,
+RESVE_GUIDANCE longtext,
+TRNSPORT_GUIDANCE longtext,
+THUMB_URL_COURS1 varchar(255),
+THUMB_URL_COURS2 varchar(255),
+THUMB_URL_COURS3 varchar(255),
+THUMB_URL_COURS4 varchar(255)
+)ENGINE = MyISAM, CHARACTER SET = UTF8;
+/*
+-- INSERT 후
+UPDATE village_info SET FNCT_NM = replace(FNCT_NM,' ','');
+UPDATE village_info SET THUMB_URL_COURS4 = replace(THUMB_URL_COURS4,' ','');
+UPDATE village_info SET FNCT_CD = replace(FNCT_CD,' ','');
+UPDATE village_info SET VILAGE_KND_NM = replace(VILAGE_KND_NM,' ','');
+UPDATE village_info SET VILAGE_FCLTY_CD = replace(VILAGE_FCLTY_CD,' ','');
+UPDATE village_info SET VILAGE_SLGN = TRIM(TRAILING FROM VILAGE_SLGN);
+UPDATE village_info SET ADDR1 = TRIM(TRAILING FROM ADDR1);
+
+
+
+ */
+
+
+-- 마을 홍보 동영상
+CREATE TABLE village_video(
+BBSCTT_NO int not null,
+VILAGE_ID varchar(255) not null,
+SJ varchar(255) not null,
+WRTER varchar(10) not null,
+CN longtext not null,
+CTPRVN varchar(255) not null,
+GU_GUN varchar(255) not null,
+THUMB_URL_COURS1 varchar(255) not null,
+THUMB_URL_COURS2 varchar(255) not null,
+THUMB_URL_COURS3 varchar(255) not null,
+THUMB_URL_COURS4 varchar(255) not null,
+PRIMARY KEY(VILAGE_ID, BBSCTT_NO)
+)ENGINE = MyISAM, CHARACTER SET = UTF8;
+
