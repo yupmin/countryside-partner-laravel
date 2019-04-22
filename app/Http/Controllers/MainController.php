@@ -17,14 +17,8 @@ class MainController extends Controller
 
     protected function index(){
 
-        $villages = $this->villageInfo
-                        ->select(
-                            'VILAGE_ID', 'VILAGE_SLGN', 'VILAGE_NM', 'THEMA_NM',
-                            'ADDR1', 'ADDR2', 'THUMB_URL_COURS1', 'THUMB_URL_COURS2', 'THUMB_URL_COURS3', 'THUMB_URL_COURS4'
-                        )
-                        ->inRandomOrder()
-                        ->limit(25)
-                        ->get();
+
+        $villages = $this->villageInfo->mains();
 
         return response()->json($villages);
 
