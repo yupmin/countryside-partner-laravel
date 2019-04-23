@@ -17,8 +17,8 @@ class MainController extends Controller
 
     protected function index(){
 
-
-        $villages = $this->villageInfo->mains();
+        $villages = VillageInfo::find('A41245')->villages;
+//        $villages = $this->villageInfo->mains();
 
         return response()->json($villages);
 

@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -22,4 +23,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/main', array(
     'as' => 'main',
     'uses' => 'MainController@index'
+));
+
+
+Route::get('/v1/villages/{village_id}', array(
+    'as' => 'v1.villages.village',
+    'uses' => 'VillageController@village'
 ));

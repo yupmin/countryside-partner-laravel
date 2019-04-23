@@ -9,7 +9,7 @@ class VillageInfo extends Model
     //
 
     protected $table = "village_info";
-
+    protected $primaryKey = "VILAGE_ID";
 
     public function mains(){
 
@@ -28,4 +28,12 @@ class VillageInfo extends Model
     }
 
 
+    public function villages(){
+
+        return $this->hasOne('App\Models\VillageVideo', 'VILAGE_ID');
+    }
+
+
 }
+
+// http://211.237.50.150:7080/openapi/b4f371498f96c269899f61303f99cd9a4e1a9bcc6693ffb906eb4d12fc141174/json/Grid_20141217000000000095_1/1/5
