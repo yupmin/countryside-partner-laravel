@@ -29,9 +29,37 @@ trait VillageTrait
     public function getOpenApiVillage(string $apiType, string $village_id){
 
 
-        return $this->curl($apiType, $village_id);
+//        return $this->curl($apiType, $village_id);
+        return $this->curlTest();
 
     }
+
+    public function curlTest(){
+
+
+        $api_end_point = "http://211.237.50.150:7080/openapi/b4f371498f96c269899f61303f99cd9a4e1a9bcc6693ffb906eb4d12fc141174/xml/Grid_20141217000000000100_1/1/5";
+        $url = $api_end_point;
+
+        $ch = curl_init();
+        $queryParams = '?' . ('VILAGE_NM') . '=' . urlencode("흥부마을");
+
+        curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        dd($response);
+        $xml = simplexml_load_string($response);
+
+        dd($xml);
+
+        $collection = collect( $this->xmlToArray($xml) );
+
+        return $collection;
+    }
+
 
     public function curl(string $apiType, string $village_id){
 

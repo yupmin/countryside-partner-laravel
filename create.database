@@ -1,3 +1,64 @@
+CREATE DATABASE countryside_partner;
+
+
+--
+CREATE TABLE cp_members(
+member_srl bigint not null primary key auto_increment,
+name varchar(255) not null,
+regdate varchar(20) not null
+)ENGINE = MyISAM, CHARACTER SET = UTF8;
+
+
+
+
+
+
+
+VILAGE_NM varchar(255),
+VILAGE_SLGN varchar(255),
+VILAGE_HMPG_ENNC varchar(255),
+VILAGE_HMPG_URL varchar(255),
+VILAGE_KND_CD varchar(255),
+VILAGE_KND_NM varchar(255),
+FNCT_CD varchar(255),
+FNCT_NM varchar(255),
+THEMA_SE_CD varchar(255),
+THEMA_NM varchar(255),
+VILAGE_RPRSNTV_NM varchar(255),
+VILAGE_RPRSNTV_TELNO varchar(255),
+VILAGE_RPRSNTV_MOBLPHON varchar(255),
+VILAGE_RPRSNTV_EMAIL varchar(255),
+PRCAFS_MAN_NM varchar(255),
+PRCAFS_MAN_TELNO varchar(255),
+PRCAFS_MAN_MOBLPHON varchar(255),
+PRCAFS_MAN_EMAIL varchar(255),
+ADDR1 varchar(255),
+ADDR2 varchar(255),
+ZIP varchar(255),
+VILAGE_FCLTY_CD varchar(255),
+VILAGE_FCLTY_NM varchar(255),
+VILAGE_INTRCN longtext,
+USE_GUIDANCE longtext,
+SCN_ORGN longtext,
+PREVEW longtext,
+EXPRN_GUIDANCE longtext,
+RESVE_GUIDANCE longtext,
+TRNSPORT_GUIDANCE longtext,
+THUMB_URL_COURS1 varchar(255),
+THUMB_URL_COURS2 varchar(255),
+THUMB_URL_COURS3 varchar(255),
+THUMB_URL_COURS4 varchar(255)
+)ENGINE = MyISAM, CHARACTER SET = UTF8;
+/** INSERT 후 ******************************************
+
+
+
+
+
+
+
+
+
 CREATE DATABASE village;
 
 
