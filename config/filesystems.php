@@ -48,6 +48,17 @@ return [
             'root' => storage_path('app'),
         ],
 
+
+        'ncloud' => [
+            'driver' => 's3',
+            'key' => env('NCLOUD_ACCESS_KEY_ID'),
+            'secret' => env('NCLOUD_SECRET_ACCESS_KEY'),
+            'region' => env('NCLOUD_DEFAULT_REGION'),
+            'version' => 'latest',
+            'bucket' => env('NCLOUD_BUCKET'),
+            'endpoint' => env('NCLOUD_URL'),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

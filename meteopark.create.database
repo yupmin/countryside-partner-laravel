@@ -1,0 +1,85 @@
+CREATE DATABASE countryside_partner;
+
+
+-- 멘토
+CREATE TABLE cp_mentors(
+mentor_srl bigint not null primary key auto_increment,
+name varchar(255) not null, -- 이름
+profile_image varchar(255), -- 프로필 이미지
+introduce varchar(255) not null, -- 기본소개
+address varchar(255) not null, -- 농장주소
+farm_name varchar(255), -- 소유농장명
+phone varchar(15), -- 연락처
+career varchar(50), -- 업종경력
+crops varchar(50), -- 주요작물
+sex varchar(10), -- 성별 ( male, female )
+birthday varchar(15), -- 생년월일
+regdate varchar(20) not null
+)ENGINE = MyISAM, CHARACTER SET = UTF8;
+
+-- 멘티
+CREATE TABLE cp_mentees(
+mentee_srl bigint not null primary key auto_increment,
+name varchar(255) not null, -- 이름
+profile_image varchar(255) not null, -- 프로필 이미지
+introduce varchar(255) not null, -- 기본소개
+address varchar(255) not null, -- 거주지
+phone varchar(15), -- 연락처
+sex varchar(10), -- 성별 ( 남성, 여성 )
+birthday varchar(15), -- 생년월일
+hoep_crops varchar(50), -- 하고싶은 작물
+target_area varchar(15), -- 귀농을 할 지역
+regdate varchar(20) not null
+)ENGINE = MyISAM, CHARACTER SET = UTF8;
+
+
+-- 호미
+CREATE TABLE cp_homis(
+homi_srl bigint not null primary key auto_increment,
+member_type varchar(15) not null, -- mentors, mentee
+homi int(10) not null default 0, -- 호미 갯수
+state varchar(10), -- 상태 (increment, decrement)
+regdate varchar(20) not null
+)ENGINE = innodb, CHARACTER SET = UTF8;
+
+-- 멘토 블로그
+CREATE TABLE cp_mentors_blog(
+blog_srl bigint not null primary key auto_increment,
+title varchar(255) not null, -- 블로그명
+image varchar(255) not null, -- 블로그 대문 이미지
+regdate varchar(20) not null
+)ENGINE = innodb, CHARACTER SET = UTF8;
+
+-- 멘티 귀농일기
+CREATE TABLE cp_mentees_diary(
+blog_srl bigint not null primary key auto_increment,
+title varchar(255) not null, -- 일기명
+image varchar(255) not null, -- 일기 대문 이미지
+regdate varchar(20) not null
+)ENGINE = innodb, CHARACTER SET = UTF8;
+
+-- 멘토 블로그 콘텐츠
+CREATE TABLE cp_mentors_blog_contents(
+blog_contents_srl bigint not null primary key auto_increment,
+title varchar(255) not null,
+contents longtext not null,
+image varchar(255) not null,
+regdate varchar(20) not null
+)ENGINE = innodb, CHARACTER SET = UTF8;
+
+-- 멘티 귀농일기 콘텐츠
+CREATE TABLE cp_mentees_diary_contents(
+diary_contents_srl bigint not null primary key auto_increment,
+title varchar(255) not null,
+contents longtext not null,
+image varchar(255) not null,
+regdate varchar(20) not null
+)ENGINE = innodb, CHARACTER SET = UTF8;
+
+
+
+
+
+
+
+
