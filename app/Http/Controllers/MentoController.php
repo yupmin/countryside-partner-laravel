@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MentoJoin;
 use App\Models\Mentor;
+use App\Services\FileUpload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
-use Storage;
 
 class MentoController extends Controller
 {
@@ -16,20 +16,12 @@ class MentoController extends Controller
      * @param MentoJoin $request
      * @return mixed
      */
-    protected function store(MentoJoin $request){
+    protected function store(MentoJoin $request, FileUpload $fileUpload){
 
         $validated = $request->validated();
-
-        $filePath = "";
-        if ($request->hasFile('profile_image')) {
-
-            $file = $request->file('profile_image');
-            $name = time() . $file->getClientOriginalName();
-            $filePath = 'profiles/' . $name;
-            Storage::disk('ncloud')->put($filePath, file_get_contents($file));
-        }
-        $validated['profile_image'] = $filePath;
+        $validated['profile_image'] = $request->hasFile('profile_image') ? $fileUpload->profileUpload($request->file('profile_image')) : "";
         Mentor::create($validated);
+
         return Response::success();
     }
 
