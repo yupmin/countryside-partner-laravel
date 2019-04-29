@@ -4,7 +4,9 @@ CREATE DATABASE countryside_partner;
 -- 멘토
 CREATE TABLE cp_mentors(
 mentor_srl bigint not null primary key auto_increment,
+id varchar(255) not null, -- 아이디
 name varchar(255) not null, -- 이름
+password varchar(255) not null, -- 비밀번호
 profile_image varchar(255), -- 프로필 이미지
 introduce varchar(255) not null, -- 기본소개
 address varchar(255) not null, -- 농장주소
