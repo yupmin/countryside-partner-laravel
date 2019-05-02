@@ -32,8 +32,8 @@ Route::get('/v1/villages/{village_id}', array(
 
     Route::group(['prefix' => 'v1'], function () {
 
-        Route::any('member/join/', array(
-            'as' => 'member.join',
+        Route::any('mento/create', array(
+            'as' => 'mento.create',
             'uses' => 'MentoController@store'
         ));
     });

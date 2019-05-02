@@ -28,14 +28,16 @@ class MentoJoin extends FormRequest
     {
         return [
             'name' => 'required',
-//            'introduce' => 'required',
-//            'address' => 'required',
-//            'farm_name' => 'required',
-//            'phone' => 'required|numeric',
-//            'career' => 'required',
-//            'crops' => 'required',
-//            'sex' => 'required|in:male,female',
-//            'birthday' => 'required|numeric',
+            'id' => 'required',
+            'password' => 'required',
+            'phone' => 'required',
+            'introduce' => 'required',
+            'address' => 'required',
+            'farm_name' => 'required',
+            'career' => 'required',
+            'crops' => 'required',
+            'sex' => 'required|in:male,female',
+            'birthday' => 'required',
         ];
     }
 

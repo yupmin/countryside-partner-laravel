@@ -11,7 +11,7 @@ profile_image varchar(255), -- 프로필 이미지
 introduce varchar(255) not null, -- 기본소개
 address varchar(255) not null, -- 농장주소
 farm_name varchar(255), -- 소유농장명
-phone varchar(15), -- 연락처
+phone varchar(255), -- 연락처
 career varchar(50), -- 업종경력
 crops varchar(50), -- 주요작물
 sex varchar(10), -- 성별 ( male, female )
