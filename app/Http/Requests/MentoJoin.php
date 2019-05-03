@@ -27,17 +27,17 @@ class MentoJoin extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
             'id' => 'required',
             'password' => 'required',
+            'name' => 'required',
+            'birthday' => 'required',
+            'sex' => 'required|in:male,female',
             'phone' => 'required',
-            'introduce' => 'required',
             'address' => 'required',
             'farm_name' => 'required',
             'career' => 'required',
+            'introduce' => 'required',
             'crops' => 'required',
-            'sex' => 'required|in:male,female',
-            'birthday' => 'required',
         ];
     }
 

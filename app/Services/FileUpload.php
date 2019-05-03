@@ -4,15 +4,31 @@
 namespace App\Services;
 use Storage;
 
-abstract class FileUpload
+abstract class FileUpload implements FileUploadFactory
 {
 
-    abstract public function configurationPath(object $file);
+    private $extensions = [
+        'jpg', 'jpeg', 'png'
+    ];
 
-    protected function upload(string $path, object $file){
+    public function uploadToStorage(string $path, object $file)
+    {
+        $filePath = null;
 
-        $filePath = $path ."/". time().$file->getClientOriginalName();
-        Storage::disk('ncloud')->put($filePath, file_get_contents($file));
+        if( $this->arrowExtension( $file->getClientOriginalExtension() )){
+
+            $filePath = $path ."/". time().$file->getClientOriginalName();
+            Storage::disk('ncloud')->put($filePath, file_get_contents($file));
+        }
+
         return $filePath;
     }
+
+    public function arrowExtension(string $extension){
+
+        return collect($this->extensions)->search(strtolower($extension));
+    }
+
+    abstract function upload(object $file);
+
 }

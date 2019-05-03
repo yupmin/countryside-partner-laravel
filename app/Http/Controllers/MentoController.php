@@ -20,7 +20,7 @@ class MentoController extends Controller
     protected function store(MentoJoin $request, FileUploadProfile $fileUploadProfile){
 
         $validated = $request->validated();
-        $validated['profile_image'] = $request->hasFile('profile_image') ? $fileUploadProfile->configurationPath($request->file('profile_image')) : "";
+        $validated['profile_image'] = $request->hasFile('profile_image') ? $fileUploadProfile->upload($request->file('profile_image')) : "";
         Mentor::create($validated);
 
         return Response::success();
