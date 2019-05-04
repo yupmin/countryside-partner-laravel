@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\VillageInfo;
+use App\Models\Mentor;
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class MainController extends Controller
 {
-    //
-    private $villageInfo = null;
 
-    public function __construct(VillageInfo $villageInfo)
+    private $mentor = null;
+
+    public function __construct(Mentor $mentor)
     {
-        $this->villageInfo = $villageInfo;
+        $this->mentor = $mentor;
     }
 
-    protected function index(){
+    protected function index(Request $request)
+    {
+        $mentors = $this->mentor::inRandomOrder()->limit(12)->get();
 
-//        $villages = VillageInfo::find('A41245')->villages;
-        $villages = $this->villageInfo->mains();
-
-        return response()->json($villages);
-
+        return response()->json($mentors);
     }
 }

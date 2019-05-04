@@ -18,24 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('main', array(
-    'as' => 'main',
-    'uses' => 'MainController@index'
-));
-Route::get('/v1/villages/{village_id}', array(
-    'as' => 'v1.villages.village',
-    'uses' => 'VillageController@village'
-));
-
 
 //Route::group(['middleware' => ''], function () {
 
     Route::group(['prefix' => 'v1'], function () {
 
-        Route::any('mento/create', array(
-            'as' => 'mento.create',
-            'uses' => 'MentoController@store'
+        Route::get('main', array(
+            'as' => 'main',
+            'uses' => 'MainController@index'
         ));
+
+        require_once __DIR__."/apis/users/users_api.php";
     });
 //});
 
