@@ -8,7 +8,7 @@ use App\Services\FileUploadProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
-class MentoController extends Controller
+class MentorController extends Controller
 {
 
     /**

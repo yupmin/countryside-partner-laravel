@@ -1,8 +1,8 @@
 <?php
 
 
-Route::post('users/mento', array(
-    'as' => 'users.mento',
-    'uses' => 'MentoController@store'
+Route::post('users/mentor', array(
+    'as' => 'users.mentor',
+    'uses' => 'MentorController@store'
 ));
 

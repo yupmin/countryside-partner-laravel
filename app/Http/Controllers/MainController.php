@@ -17,10 +17,10 @@ class MainController extends Controller
         $this->mentor = $mentor;
     }
 
-    protected function index(Request $request)
+    protected function index()
     {
-        $mentors = $this->mentor::inRandomOrder()->limit(12)->get();
+        $mentors = $this->mentor::inRandomOrder()->limit(8)->get();
 
-        return response()->json($mentors);
+        return Response::success($mentors);
     }
 }
