@@ -27,8 +27,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
             'as' => 'main',
             'uses' => 'MainController@index'
         ));
+        Route::get('mentors/{mentor}', array(
+            'as' => 'mentors.mentor',
+            'uses' => 'MentorController@index'
+        ));
 
-        require_once __DIR__."/apis/users/users_api.php";
+
+        Route::post('users/mentor', array(
+            'as' => 'users.mentor',
+            'uses' => 'MentorController@store'
+        ));
+
+
     });
 //});
 
