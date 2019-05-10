@@ -14,11 +14,14 @@ farm_name varchar(255), -- 소유농장명
 phone varchar(255), -- 연락처
 career varchar(50), -- 업종경력
 crops varchar(50), -- 주요작물
-sex varchar(10), -- 성별 ( male, female )
+sex varchar(10), -- 성별 ( male, female ),
+mentoring_count int(255) default 0,
+homi int(255) default 10,
 birthday varchar(15), -- 생년월일
 regdate varchar(20) not null
 )ENGINE = MyISAM, CHARACTER SET = UTF8;
-
+alter table cp_mentors add mentoring_count int(255) default 0 after sex;
+alter table cp_mentors add homi int(255) default 0 after mentoring_count;
 -- 멘티
 CREATE TABLE cp_mentees(
 mentee_srl bigint not null primary key auto_increment,

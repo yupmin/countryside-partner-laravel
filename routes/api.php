@@ -27,6 +27,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
             'as' => 'main',
             'uses' => 'MainController@index'
         ));
+
+        Route::get('mentors', array(
+            'as' => 'mentors',
+            'uses' => 'MentorController@lists'
+        ));
+
         Route::get('mentors/{mentor}', array(
             'as' => 'mentors.mentor',
             'uses' => 'MentorController@index'

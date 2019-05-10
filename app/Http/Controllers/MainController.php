@@ -20,7 +20,6 @@ class MainController extends Controller
     protected function index()
     {
         $mentors = $this->mentor::inRandomOrder()->limit(8)->get();
-
         return Response::success($mentors);
     }
 }
