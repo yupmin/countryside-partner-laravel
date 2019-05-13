@@ -22,21 +22,24 @@ regdate varchar(20) not null
 )ENGINE = MyISAM, CHARACTER SET = UTF8;
 alter table cp_mentors add mentoring_count int(255) default 0 after sex;
 alter table cp_mentors add homi int(255) default 0 after mentoring_count;
+
 -- 멘티
 CREATE TABLE cp_mentees(
 mentee_srl bigint not null primary key auto_increment,
+id varchar(255) not null, -- 아이디
 name varchar(255) not null, -- 이름
+password varchar(255) not null, -- 비밀번호
 profile_image varchar(255) not null, -- 프로필 이미지
 introduce varchar(255) not null, -- 기본소개
 address varchar(255) not null, -- 거주지
-phone varchar(15), -- 연락처
+phone varchar(255), -- 연락처
 sex varchar(10), -- 성별 ( 남성, 여성 )
 birthday varchar(15), -- 생년월일
-hoep_crops varchar(50), -- 하고싶은 작물
+homi int(255) default 10,
+crops varchar(50), -- 하고싶은 작물
 target_area varchar(15), -- 귀농을 할 지역
 regdate varchar(20) not null
 )ENGINE = MyISAM, CHARACTER SET = UTF8;
-
 
 -- 호미
 CREATE TABLE cp_homis(

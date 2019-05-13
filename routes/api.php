@@ -28,22 +28,26 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
             'uses' => 'MainController@index'
         ));
 
+
+
+        // Only 멘토
         Route::get('mentors', array(
             'as' => 'mentors',
             'uses' => 'MentorController@lists'
         ));
-
         Route::get('mentors/{mentor}', array(
             'as' => 'mentors.mentor',
             'uses' => 'MentorController@index'
         ));
-
-
-        Route::post('users/mentor', array(
-            'as' => 'users.mentor',
+        Route::post('join/mentor', array(
+            'as' => 'join.mentor',
             'uses' => 'MentorController@store'
         ));
-
+        // Only 멘티
+        Route::post('join/mentee', array(
+            'as' => 'join.mentee',
+            'uses' => 'MenteeController@store'
+        ));
 
     });
 //});

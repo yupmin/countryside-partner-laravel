@@ -32,7 +32,6 @@ class MentoJoin extends FormRequest
             'name' => 'required',
             'birthday' => 'required',
             'sex' => 'required|in:male,female',
-            'phone' => 'required',
             'address' => 'required',
             'farm_name' => 'required',
             'career' => 'required',

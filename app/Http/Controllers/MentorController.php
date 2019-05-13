@@ -17,6 +17,7 @@ class MentorController extends Controller
      * @param FileUploadProfile $fileUploadProfile
      * @return mixed
      */
+
     protected function store(MentoJoin $request, FileUploadProfile $fileUploadProfile){
 
         $validated = $request->validated();

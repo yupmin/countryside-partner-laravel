@@ -29,15 +29,15 @@ class MenteeJoin extends FormRequest
     public function rules()
     {
         return [
+            'id' => 'required',
+            'password' => 'required',
             'name' => 'required',
-//            'introduce' => 'required',
-//            'address' => 'required',
-//            'farm_name' => 'required',
-//            'phone' => 'required|numeric',
-//            'career' => 'required',
-//            'crops' => 'required',
-//            'sex' => 'required|in:male,female',
-//            'birthday' => 'required|numeric',
+            'birthday' => 'required',
+            'sex' => 'required|in:male,female',
+            'address' => 'required',
+            'introduce' => 'required',
+            'crops' => 'required',
+            'target_area' => 'required',
         ];
     }
 
