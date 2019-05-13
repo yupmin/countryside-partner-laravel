@@ -4,9 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Notifications\Notifiable;
 
-class Mentor extends Model
+class Mentor extends Model implements JWTSubject
 {
+    use Notifiable;
+
     const CREATED_AT = 'regdate';
     const UPDATED_AT = null;
 
@@ -30,7 +34,27 @@ class Mentor extends Model
     }
 
 
+    /**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier()
+    {
+        // TODO: Implement getJWTIdentifier() method.
+        return $this->getKey();
 
-
-
+    }
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [
+            $this->primaryKey
+        ];
+        // TODO: Implement getJWTCustomClaims() method.
+    }
 }
