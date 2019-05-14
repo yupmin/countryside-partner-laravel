@@ -15,14 +15,13 @@ class MenteeController extends Controller
 
         $validated = $request->validated();
 
-
         $validated['profile_image'] = $request->hasFile('profile_image') ? $fileUploadProfile->upload($request->file('profile_image')) : "";
 
         $mentee = Mentee::create($validated);
 
-        $token['token'] = JWTAuth::fromUser($mentee);
+        $collection = collect($mentee)->put('token', JWTAuth::fromUser($mentee));
 
-        return Response::success($token);
+        return Response::success($collection);
     }
 
 
