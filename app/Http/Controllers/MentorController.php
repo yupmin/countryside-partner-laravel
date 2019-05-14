@@ -22,9 +22,9 @@ class MentorController extends Controller
 
         $mentor = Mentor::create($validated);
 
-        $token['token'] = JWTAuth::fromUser($mentor);
+        $collection = collect($mentor)->put('token', JWTAuth::fromUser($mentor));
 
-        return Response::success($token);
+        return Response::success($collection);
     }
 
 
