@@ -20,7 +20,7 @@ class MenteeController extends Controller
 
         $mentee = Mentee::create($validated);
 
-        $token = JWTAuth::fromUser($mentee);
+        $token['token'] = JWTAuth::fromUser($mentee);
 
         return Response::success($token);
     }
