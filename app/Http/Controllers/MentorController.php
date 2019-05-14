@@ -4,23 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MentoJoin;
 use App\Models\Mentor;
+use App\Services\FileUploadProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
-use App\Traits\UserTrait;
-use App\Services\MentorService;
+use JWTAuth;
 
 class MentorController extends Controller
 {
 
 
 
-
-
-    protected function store(MentoJoin $request, MentorService $mentorService){
+    protected function store(MentoJoin $request, FileUploadProfile $fileUploadProfile){
 
         $validated = $request->validated();
 
-        $token = $mentorService->mentorCreateAfterResponseToken($validated, $request);
+        $validated['profile_image'] = $request->hasFile('profile_image') ? $fileUploadProfile->upload($request->file('profile_image')) : "";
+
+        $mentor = Mentor::create($validated);
+
+        $token = JWTAuth::fromUser($mentor);
 
         return Response::success($token);
     }

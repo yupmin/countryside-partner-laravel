@@ -53,8 +53,9 @@ class Mentor extends Model implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [
-            $this->primaryKey
+            'user_type' => 'MENTOR',
+            'id' => $this->mentor_srl,
+            'profile_image' => $this->profile_image,
         ];
-        // TODO: Implement getJWTCustomClaims() method.
     }
 }

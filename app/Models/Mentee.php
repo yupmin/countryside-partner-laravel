@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Hash;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class Mentee extends Model
+class Mentee extends Model implements JWTSubject
 {
     const CREATED_AT = 'regdate';
     const UPDATED_AT = null;
@@ -27,5 +28,30 @@ class Mentee extends Model
     public function setPhoneAttribute($value){
 
         $this->attributes['phone'] = encrypt($value);
+    }
+
+    /**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier()
+    {
+        // TODO: Implement getJWTIdentifier() method.
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        // TODO: Implement getJWTCustomClaims() method.
+        return [
+            'user_type' => 'MENTOR',
+            'id' => $this->mentee_srl,
+            'profile_image' => $this->profile_image,
+        ];
     }
 }

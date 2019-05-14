@@ -7,16 +7,22 @@ use App\Models\Mentee;
 use App\Services\FileUploadProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use JWTAuth;
 
 class MenteeController extends Controller
 {
     protected function store(MenteeJoin $request, FileUploadProfile $fileUploadProfile){
 
         $validated = $request->validated();
-        $validated['profile_image'] = $request->hasFile('profile_image') ? $fileUploadProfile->upload($request->file('profile_image')) : "";
-        Mentee::create($validated);
 
-        return Response::success();
+
+        $validated['profile_image'] = $request->hasFile('profile_image') ? $fileUploadProfile->upload($request->file('profile_image')) : "";
+
+        $mentee = Mentee::create($validated);
+
+        $token = JWTAuth::fromUser($mentee);
+
+        return Response::success($token);
     }
 
 

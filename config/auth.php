@@ -1,6 +1,7 @@
 <?php
 
 
+
 return [
 
     /*
@@ -74,10 +75,10 @@ return [
 
          'users' => [
              'driver' => 'database',
-             'table' => 'cp_mentors',
-//             'driver' => 'eloquent',
-//             'table' => App\Models\Mentor::class,
+             'table' => App\Models\Mentee::class,
          ],
+
+
     ],
 
     /*
