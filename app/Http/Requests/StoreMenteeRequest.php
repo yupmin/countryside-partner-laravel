@@ -2,12 +2,14 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Contracts\Validation\Validator;
 
-class MentoJoin extends FormRequest
+
+
+class StoreMenteeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -33,10 +35,9 @@ class MentoJoin extends FormRequest
             'birthday' => 'required',
             'sex' => 'required|in:male,female',
             'address' => 'required',
-            'farm_name' => 'required',
-            'career' => 'required',
             'introduce' => 'required',
             'crops' => 'required',
+            'target_area' => 'required',
         ];
     }
 
@@ -50,4 +51,5 @@ class MentoJoin extends FormRequest
         $response = new JsonResponse( $json, 400 );
         throw (new ValidationException($validator, $response))->status(400);
     }
+
 }

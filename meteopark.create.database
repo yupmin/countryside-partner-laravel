@@ -41,6 +41,35 @@ target_area varchar(15), -- 귀농을 할 지역
 regdate varchar(20) not null
 )ENGINE = MyISAM, CHARACTER SET = UTF8;
 
+
+-- 멘토 영농일지
+CREATE TABLE cp_mentors_diary(
+diary_srl bigint not null primary key auto_increment,
+mentor_srl bigint not null, -- 작성자 번호
+title varchar(255) not null, -- 제목
+image varchar(255) not null, -- 이미지
+contents longtext not null, -- 내용
+view_count int(255) not null default 0, -- 조회 수
+like_count int(255) not null default 0, -- 좋아요 수
+regdate varchar(20) not null -- 등록일자
+)ENGINE = innodb, CHARACTER SET = UTF8;
+
+-- 멘티 영농일지
+CREATE TABLE cp_mentees_diary(
+diary_srl bigint not null primary key auto_increment,
+mentee_srl bigint not null, -- 작성자 번호
+title varchar(255) not null, -- 제목
+image varchar(255) not null, -- 이미지
+contents longtext not null, -- 내용
+view_count int(255) not null default 0, -- 조회 수
+like_count int(255) not null default 0, -- 좋아요 수
+regdate varchar(20) not null -- 등록일자
+)ENGINE = innodb, CHARACTER SET = UTF8;
+
+
+
+
+
 -- 호미
 CREATE TABLE cp_homis(
 homi_srl bigint not null primary key auto_increment,
@@ -50,39 +79,6 @@ state varchar(10), -- 상태 (increment, decrement)
 regdate varchar(20) not null
 )ENGINE = innodb, CHARACTER SET = UTF8;
 
--- 멘토 블로그
-CREATE TABLE cp_mentors_blog(
-blog_srl bigint not null primary key auto_increment,
-title varchar(255) not null, -- 블로그명
-image varchar(255) not null, -- 블로그 대문 이미지
-regdate varchar(20) not null
-)ENGINE = innodb, CHARACTER SET = UTF8;
-
--- 멘티 귀농일기
-CREATE TABLE cp_mentees_diary(
-blog_srl bigint not null primary key auto_increment,
-title varchar(255) not null, -- 일기명
-image varchar(255) not null, -- 일기 대문 이미지
-regdate varchar(20) not null
-)ENGINE = innodb, CHARACTER SET = UTF8;
-
--- 멘토 블로그 콘텐츠
-CREATE TABLE cp_mentors_blog_contents(
-blog_contents_srl bigint not null primary key auto_increment,
-title varchar(255) not null,
-contents longtext not null,
-image varchar(255) not null,
-regdate varchar(20) not null
-)ENGINE = innodb, CHARACTER SET = UTF8;
-
--- 멘티 귀농일기 콘텐츠
-CREATE TABLE cp_mentees_diary_contents(
-diary_contents_srl bigint not null primary key auto_increment,
-title varchar(255) not null,
-contents longtext not null,
-image varchar(255) not null,
-regdate varchar(20) not null
-)ENGINE = innodb, CHARACTER SET = UTF8;
 
 
 
