@@ -53,16 +53,15 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof TokenExpiredException) {
 
-            return Response::jwt_error($exception->getCode(), $exception->getMessage());
+            return response()->custom_error_token($exception->getCode(), $exception->getMessage());
 
         }else if($exception instanceof TokenInvalidException){
 
-            return Response::jwt_error($exception->getCode(), $exception->getMessage());
+            return response()->custom_error_token($exception->getCode(), $exception->getMessage());
 
         }else if($exception instanceof JWTException){
 
-            return Response::jwt_error($exception->getCode(), $exception->getMessage());
-
+            return response()->custom_error_token($exception->getCode(), $exception->getMessage());
         }
 
 
@@ -70,7 +69,7 @@ class Handler extends ExceptionHandler
         if($exception instanceof MeteoException)
         {
 
-            return Response::error($exception);
+            return response()->error($exception);
 
         }
         return parent::render($request, $exception);

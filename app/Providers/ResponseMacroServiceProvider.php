@@ -25,6 +25,25 @@ class ResponseMacroServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // 토큰 실패
+        Response::macro('custom_error_token', function($code, $message)
+        {
+
+            $response = [
+
+                'stat' => 0,
+                'error' => [
+
+                    'code' => $code,
+                    'message' => $message,
+                ],
+            ];
+
+            return Response()->json( $response );
+        });
+
+
+
         // 실패일때
         Response::macro('error', function(MeteoException $e)
         {

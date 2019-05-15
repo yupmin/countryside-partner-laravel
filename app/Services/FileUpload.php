@@ -19,6 +19,10 @@ abstract class FileUpload implements FileUploadFactory
 
             $filePath = $path ."/". time().$file->getClientOriginalName();
             Storage::disk('ncloud')->put($filePath, file_get_contents($file));
+
+        } else{
+
+            $filePath = "File not allowed";
         }
 
         return $filePath;

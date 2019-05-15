@@ -19,16 +19,18 @@ class MenteeService
 
     public function create($menteeData)
     {
-        if($menteeData->hasFile('profile_image'))
+        $menteeDataArr = $menteeData->all();
+
+        if(!is_null($menteeData->file('profile_image')))
         {
             $profile_image = $this->fileUploadProfile->upload($menteeData->file('profile_image'));
-            $menteeData = $menteeData->all();
-            $menteeData['profile_image'] = $profile_image;
+
+            $menteeDataArr['profile_image'] = $profile_image;
         }
 
-        $mentor = Mentee::create($menteeData);
+        $mentee = Mentee::create($menteeDataArr);
 
-        $collection = collect($mentor)->put('token', JWTAuth::fromUser($mentor));
+        $collection = collect($mentee)->put('token', JWTAuth::fromUser($mentee));
 
         return $collection;
     }

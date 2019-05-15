@@ -6,7 +6,7 @@ use Closure;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 
-class CustomGetUserToken
+class CustomGetUserToken extends BaseMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,6 @@ class CustomGetUserToken
      */
     public function handle($request, Closure $next)
     {
-
         if (! $this->auth->setRequest($request)->getToken()) {
 
             throw new JWTException('Token not provided', 400);

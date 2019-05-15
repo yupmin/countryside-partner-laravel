@@ -19,15 +19,16 @@ class MentorService
 
     public function create($mentorData)
     {
+        $mentorDataArr = $mentorData->all();
+
         if(!is_null($mentorData->file('profile_image')))
         {
             $profile_image = $this->fileUploadProfile->upload($mentorData->file('profile_image'));
-            $mentorData = $mentorData->all();
-            $mentorData['profile_image'] = $profile_image;
+
+            $mentorDataArr['profile_image'] = $profile_image;
         }
 
-        $mentor = Mentor::create($mentorData);
-
+        $mentor = Mentor::create($mentorDataArr);
         $collection = collect($mentor)->put('token', JWTAuth::fromUser($mentor));
 
         return $collection;

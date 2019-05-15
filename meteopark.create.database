@@ -29,7 +29,7 @@ mentee_srl bigint not null primary key auto_increment,
 id varchar(255) not null, -- 아이디
 name varchar(255) not null, -- 이름
 password varchar(255) not null, -- 비밀번호
-profile_image varchar(255) not null, -- 프로필 이미지
+profile_image varchar(255), -- 프로필 이미지
 introduce varchar(255) not null, -- 기본소개
 address varchar(255) not null, -- 거주지
 phone varchar(255), -- 연락처
@@ -47,7 +47,7 @@ CREATE TABLE cp_mentors_diary(
 diary_srl bigint not null primary key auto_increment,
 mentor_srl bigint not null, -- 작성자 번호
 title varchar(255) not null, -- 제목
-image varchar(255) not null, -- 이미지
+image varchar(255), -- 이미지
 contents longtext not null, -- 내용
 view_count int(255) not null default 0, -- 조회 수
 like_count int(255) not null default 0, -- 좋아요 수
@@ -59,7 +59,7 @@ CREATE TABLE cp_mentees_diary(
 diary_srl bigint not null primary key auto_increment,
 mentee_srl bigint not null, -- 작성자 번호
 title varchar(255) not null, -- 제목
-image varchar(255) not null, -- 이미지
+image varchar(255), -- 이미지
 contents longtext not null, -- 내용
 view_count int(255) not null default 0, -- 조회 수
 like_count int(255) not null default 0, -- 좋아요 수
