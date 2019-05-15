@@ -2,9 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Mentor;
 use Closure;
+use Illuminate\Support\Facades\Config;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
+use JWTAuth;
 
 class CustomGetUserToken extends BaseMiddleware
 {
@@ -18,6 +21,13 @@ class CustomGetUserToken extends BaseMiddleware
      */
     public function handle($request, Closure $next)
     {
+        Config::set('jwt.user', Mentor::class);
+        Config::set('auth.providers.users.model', Mentor::class);
+
+
+        dd(JWTAuth::getToken());
+
+
         if (! $this->auth->setRequest($request)->getToken()) {
 
             throw new JWTException('Token not provided', 400);

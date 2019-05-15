@@ -14522,7 +14522,7 @@ namespace  {
 
     class Cache extends \Illuminate\Support\Facades\Cache {}
 
-    class Config extends \Illuminate\Support\Facades\Config {}
+    class \Config extends \Illuminate\Support\Facades\Config {}
 
     class Cookie extends \Illuminate\Support\Facades\Cookie {}
 

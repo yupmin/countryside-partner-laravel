@@ -47,6 +47,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+//        'mentor' => [
+//            'driver' => 'token',
+//            'provider' => 'mentor',
+//        ],
     ],
 
     /*
@@ -74,8 +79,13 @@ return [
 
          'users' => [
              'driver' => 'database',
-             'table' => App\Models\Mentee::class,
+             'table' => App\Models\Mentor::class,
          ],
+
+//        'mentor' => [
+//            'driver' => 'database',
+//            'table' => App\Models\Mentor::class,
+//        ],
 
 
     ],
