@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Models\Mentor;
 
 return [
 
@@ -15,6 +16,10 @@ return [
     |
     */
 
+//    'defaults' => [
+//        'guard' => 'web',
+//        'passwords' => 'users',
+//    ],
     'defaults' => [
         'guard' => 'web',
         'passwords' => 'users',
@@ -42,16 +47,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
         ],
 
-//        'mentor' => [
-//            'driver' => 'token',
-//            'provider' => 'mentor',
-//        ],
     ],
 
     /*
@@ -81,13 +81,6 @@ return [
              'driver' => 'database',
              'table' => App\Models\Mentor::class,
          ],
-
-//        'mentor' => [
-//            'driver' => 'database',
-//            'table' => App\Models\Mentor::class,
-//        ],
-
-
     ],
 
     /*

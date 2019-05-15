@@ -24,7 +24,6 @@ class MentorService
         if(!is_null($mentorData->file('profile_image')))
         {
             $profile_image = $this->fileUploadProfile->upload($mentorData->file('profile_image'));
-
             $mentorDataArr['profile_image'] = $profile_image;
         }
 

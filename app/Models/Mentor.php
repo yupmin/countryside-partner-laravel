@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Contracts\JWTSubject;
-use Illuminate\Notifications\Notifiable;
 
 class Mentor extends Model implements JWTSubject
 {
@@ -21,7 +21,6 @@ class Mentor extends Model implements JWTSubject
 //  guarded 혹은 fillable 둘 중에 하나만 써야 함.
 
     protected $hidden = ['password', 'phone'];
-
 
     public function setPasswordAttribute($value){
 
@@ -52,6 +51,7 @@ class Mentor extends Model implements JWTSubject
      */
     public function getJWTCustomClaims()
     {
+
         return [
             'user_type' => 'MENTOR',
             'id' => $this->mentor_srl,
