@@ -36,7 +36,7 @@ class MentorController extends Controller
 
         } else{
 
-            $mentor = Mentor::findOrFail($mentor_srl);
+            $mentor = Mentor::find($mentor_srl);
         }
 
         return response()->success($mentor);
