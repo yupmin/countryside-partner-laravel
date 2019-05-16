@@ -44,6 +44,29 @@ class MentorService
 
         }])->find($mentor_srl);
 
+        $collection = collect($mentor);
+
+        $mentor = $collection->map(function ($item, $key) {
+
+            if($key == "diaries"){
+
+                foreach($item as $itemKey)
+                {
+                    $itemKey['contents'] = "hihddiasffsddsfadfdsfsdfsfasih";
+                    $item = $itemKey['contents'];
+//                    print_r($item);
+                }
+//                print_r($item);
+
+            }
+
+            return $item;
+
+        });
+
+
+
+
         return $mentor;
     }
 
