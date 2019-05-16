@@ -16,4 +16,11 @@ class MentorDiary extends Model
 
     protected $hidden = [];
 
+
+
+    public function mentor(){
+
+        return $this->belongsTo(Mentor::class, 'mentor_srl');
+    }
+
 }

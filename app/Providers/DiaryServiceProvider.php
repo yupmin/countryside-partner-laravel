@@ -14,7 +14,7 @@ class DiaryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Services\DiaryInterface', 'App\Services\DiaryService');
+        $this->app->bind('App\Services\DiaryInterface', 'App\Services\MentorDiaryService');
     }
 
     /**

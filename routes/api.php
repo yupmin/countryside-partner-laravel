@@ -29,9 +29,9 @@ Route::group(['middleware' => 'jwt.auth.custom'], function () {
 
     Route::group(['prefix' => 'v1'], function () {
 
-        Route::post('diaries', array(
-            'as' => 'diaries.store',
-            'uses' => 'DiaryController@store'
+        Route::get('mentors/diaries', array( // 멘토 - 영농일지 작성
+            'as' => 'mentors.diaries.store',
+            'uses' => 'MentorDiaryController@store'
         ));
     });
 });
@@ -46,31 +46,28 @@ Route::group(['prefix' => 'v1'], function () {
 
 
 
-    // Only 멘토
-    Route::get('mentors', array(
+    Route::get('mentors', array( // 멘토 - 전체 회원 조회
         'as' => 'mentors',
         'uses' => 'MentorController@lists'
     ));
-    Route::get('mentors/{mentor_srl}', array(
+    Route::get('mentors/{mentor_srl}', array( // 멘토 - 프로필 조회
         'as' => 'mentors.mentor',
         'uses' => 'MentorController@index'
     ));
-    Route::post('join/mentor', array(
+    Route::get('mentors/diaries/{diary_id}', array( //  멘토 - 영농일지 조회
+        'as' => 'mentors.diaries.show',
+        'uses' => 'MentorDiaryController@show'
+    ));
+    Route::post('join/mentor', array( // 멘토 - 회원가입
         'as' => 'join.store',
         'uses' => 'MentorController@store'
     ));
-
-    // Only 멘티
-    Route::post('join/mentee', array(
+    Route::post('join/mentee', array( // 멘토 - 회원가입
         'as' => 'join.store',
         'uses' => 'MenteeController@store'
     ));
 
-    // 회원의 영농일지 가져오기
-    Route::get('diaries/{diary_id}', array(
-        'as' => 'diaries.show',
-        'uses' => 'DiaryController@show'
-    ));
+
 
 });
 

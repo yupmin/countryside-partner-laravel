@@ -13,11 +13,16 @@ use Illuminate\Http\Request;
 class MentorController extends Controller
 {
 
+    private $mentorService;
 
+    public function __construct(MentorService $mentorService)
+    {
+        $this->mentorService = $mentorService;
+    }
 
-    protected function store(StoreMentorRequest $request, MentorService $mentorService){
+    protected function store(StoreMentorRequest $request){
 
-        $mentor = $mentorService->create($request);
+        $mentor = $this->mentorService->create($request);
 
         return response()->success($mentor);
     }
@@ -25,7 +30,15 @@ class MentorController extends Controller
 
     protected function index($mentor_srl){
 
-        $mentor = Mentor::findOrFail($mentor_srl);
+        if(request('is_diary'))
+        {
+            $mentor = Mentor::findOrFail($mentor_srl);
+
+        } else{
+
+            $mentor = Mentor::findOrFail($mentor_srl);
+        }
+
         return response()->success($mentor);
     }
 
