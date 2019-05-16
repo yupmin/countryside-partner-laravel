@@ -31,4 +31,20 @@ class MentorService
         return $collection;
     }
 
+
+    /**
+     * @param $mentor_srl
+     * @return Mentor|Mentor[]|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null
+     */
+    public function getMentor($mentor_srl){
+
+        $mentor = Mentor::with(['diaries' => function ($query){
+
+            $query->orderBy('regdate', 'desc');//->paginate(15);
+
+        }])->find($mentor_srl);
+
+        return $mentor;
+    }
+
 }

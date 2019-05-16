@@ -31,7 +31,11 @@ class MentorDiaryService implements DiaryInterface
     {
 
         return $this->mentorDiary->with('mentor')->find($diary_srl);
-
     }
 
+    public function all()
+    {
+
+        return $this->mentorDiary->with('mentor')->orderBy('regdate', 'desc')->get();
+    }
 }

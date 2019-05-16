@@ -30,9 +30,9 @@ class MentorController extends Controller
 
     protected function index($mentor_srl){
 
-        if(request('is_diary'))
+        if(request('is_diary') === "true")
         {
-            $mentor = Mentor::findOrFail($mentor_srl);
+            $mentor = $this->mentorService->getMentor($mentor_srl);
 
         } else{
 

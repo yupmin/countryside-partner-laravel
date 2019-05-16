@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class Mentor extends Model implements JWTSubject
@@ -30,6 +29,11 @@ class Mentor extends Model implements JWTSubject
     public function setPhoneAttribute($value){
 
         $this->attributes['phone'] = encrypt($value);
+    }
+
+    public function diaries(){
+
+        return $this->hasMany(MentorDiary::class, 'mentor_srl');
     }
 
 

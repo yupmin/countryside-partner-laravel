@@ -31,4 +31,12 @@ class MentorDiaryController
 
         return response()->success($contents);
     }
+
+
+    public function index()
+    {
+        $contents = $this->diary->all();
+
+        return response()->success($contents);
+    }
 }

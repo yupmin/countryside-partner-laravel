@@ -29,7 +29,7 @@ Route::group(['middleware' => 'jwt.auth.custom'], function () {
 
     Route::group(['prefix' => 'v1'], function () {
 
-        Route::get('mentors/diaries', array( // 멘토 - 영농일지 작성
+        Route::post('mentors/diaries', array( // 멘토 - 영농일지 작성
             'as' => 'mentors.diaries.store',
             'uses' => 'MentorDiaryController@store'
         ));
@@ -54,10 +54,17 @@ Route::group(['prefix' => 'v1'], function () {
         'as' => 'mentors.mentor',
         'uses' => 'MentorController@index'
     ));
-    Route::get('mentors/diaries/{diary_id}', array( //  멘토 - 영농일지 조회
+    Route::get('diaries-mentors', array( //  멘토 - 영농일지 전체 조회
+        'as' => 'mentors.diaries.index',
+        'uses' => 'MentorDiaryController@index'
+    ));
+    Route::get('diaries-mentors/{diary_id}', array( //  멘토 - 영농일지 선택 조회
         'as' => 'mentors.diaries.show',
         'uses' => 'MentorDiaryController@show'
     ));
+
+
+
     Route::post('join/mentor', array( // 멘토 - 회원가입
         'as' => 'join.store',
         'uses' => 'MentorController@store'

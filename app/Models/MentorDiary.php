@@ -23,4 +23,6 @@ class MentorDiary extends Model
         return $this->belongsTo(Mentor::class, 'mentor_srl');
     }
 
+
+
 }
