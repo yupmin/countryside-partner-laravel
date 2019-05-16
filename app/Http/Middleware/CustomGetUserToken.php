@@ -40,6 +40,10 @@ class CustomGetUserToken extends BaseMiddleware
             throw new JWTException('User not found', 404);
         }
 
+        $request->merge([
+            'user_type' => $jwt->get('user_type'),
+            'id' => $jwt->get('id')
+        ]);
 
         return $next($request);
     }

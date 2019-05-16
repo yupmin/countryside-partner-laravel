@@ -16,6 +16,4 @@ class MentorDiary extends Model
 
     protected $hidden = [];
 
-
-
 }

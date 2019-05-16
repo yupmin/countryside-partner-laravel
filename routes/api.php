@@ -24,16 +24,18 @@ use Illuminate\Http\Request;
 
 
 
+
 Route::group(['middleware' => 'jwt.auth.custom'], function () {
 
     Route::group(['prefix' => 'v1'], function () {
 
-        Route::any('diary', array(
-            'as' => 'diary.store',
+        Route::post('diaries', array(
+            'as' => 'diaries.store',
             'uses' => 'DiaryController@store'
         ));
     });
 });
+
 
 Route::group(['prefix' => 'v1'], function () {
 
@@ -49,19 +51,25 @@ Route::group(['prefix' => 'v1'], function () {
         'as' => 'mentors',
         'uses' => 'MentorController@lists'
     ));
-    Route::get('mentors/{mentor}', array(
+    Route::get('mentors/{mentor_srl}', array(
         'as' => 'mentors.mentor',
         'uses' => 'MentorController@index'
     ));
     Route::post('join/mentor', array(
-        'as' => 'join.mentor',
+        'as' => 'join.store',
         'uses' => 'MentorController@store'
     ));
 
     // Only 멘티
     Route::post('join/mentee', array(
-        'as' => 'join.mentee',
+        'as' => 'join.store',
         'uses' => 'MenteeController@store'
+    ));
+
+    // 회원의 영농일지 가져오기
+    Route::get('diaries/{diary_id}', array(
+        'as' => 'diaries.show',
+        'uses' => 'DiaryController@show'
     ));
 
 });

@@ -23,9 +23,9 @@ class MentorController extends Controller
     }
 
 
-    protected function index($mentor){
+    protected function index($mentor_srl){
 
-        $mentor = Mentor::findOrFail($mentor);
+        $mentor = Mentor::findOrFail($mentor_srl);
         return response()->success($mentor);
     }
 

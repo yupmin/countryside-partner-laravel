@@ -10,23 +10,21 @@ use JWTAuth;
 class MentorService
 {
 
-    private $fileUploadProfile = null;
+    private $fileUploadService;
 
-    public function __construct(FileUploadProfile $fileUploadProfile)
+    /**
+     * MentorService constructor.
+     * @param FileUploadService $fileUploadService
+     */
+    public function __construct(FileUploadService $fileUploadService)
     {
-        $this->fileUploadProfile = $fileUploadProfile;
+        $this->fileUploadService = $fileUploadService;
     }
 
     public function create($mentorData)
     {
         $mentorDataArr = $mentorData->all();
-
-        if(!is_null($mentorData->file('profile_image')))
-        {
-            $profile_image = $this->fileUploadProfile->upload($mentorData->file('profile_image'));
-            $mentorDataArr['profile_image'] = $profile_image;
-        }
-
+        $mentorDataArr['profile_image'] = $this->fileUploadService->profileUpload($mentorData->file('profile_image'));
         $mentor = Mentor::create($mentorDataArr);
         $collection = collect($mentor)->put('token', JWTAuth::fromUser($mentor));
 

@@ -5,13 +5,30 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\StoreMentorDiaryRequest;
+use App\Services\DiaryInterface;
 
 class DiaryController
 {
 
-    public function store(StoreMentorDiaryRequest $request){
+    protected $diary;
 
-        echo "@";
+    public function __construct(DiaryInterface $diary)
+    {
+        $this->diary = $diary;
+    }
 
+    public function store(StoreMentorDiaryRequest $request)
+    {
+
+        $this->diary->create($request);
+
+        return response()->success();
+    }
+
+    public function show($diary_id)
+    {
+        $contents = $this->diary->get($diary_id);
+
+        return response()->success($contents);
     }
 }

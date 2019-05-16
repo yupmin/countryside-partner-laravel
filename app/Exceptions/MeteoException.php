@@ -40,6 +40,13 @@ class MeteoException extends Exception
                 break;
 
 
+
+            case 700 :
+
+                $this->exceptionInfo['code'] = $code;
+                $this->exceptionInfo['message'] = 'JWT의 user_type이 올바르지 않습니다.';
+                break;
+
             default :
 
                 $this->exceptionInfo['code'] = 999;

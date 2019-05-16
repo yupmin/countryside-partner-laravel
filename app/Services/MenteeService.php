@@ -10,29 +10,24 @@ use JWTAuth;
 class MenteeService
 {
 
-    private $fileUploadProfile = null;
+    private $fileUploadService;
 
-    public function __construct(FileUploadProfile $fileUploadProfile)
+    public function __construct(FileUploadService $fileUploadService)
     {
-        $this->fileUploadProfile = $fileUploadProfile;
+        $this->fileUploadService = $fileUploadService;
     }
 
     public function create($menteeData)
     {
         $menteeDataArr = $menteeData->all();
-
-        if(!is_null($menteeData->file('profile_image')))
-        {
-            $profile_image = $this->fileUploadProfile->upload($menteeData->file('profile_image'));
-
-            $menteeDataArr['profile_image'] = $profile_image;
-        }
-
+        $menteeDataArr['profile_image'] = $this->fileUploadService->profileUpload($menteeData->file('profile_image'));
         $mentee = Mentee::create($menteeDataArr);
 
         $collection = collect($mentee)->put('token', JWTAuth::fromUser($mentee));
 
         return $collection;
     }
+
+
 
 }

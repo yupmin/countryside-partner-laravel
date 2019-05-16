@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mentor;
-use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
 
 class MainController extends Controller
 {
@@ -20,6 +18,6 @@ class MainController extends Controller
     protected function index()
     {
         $mentors = $this->mentor::inRandomOrder()->limit(8)->get();
-        return Response::success($mentors);
+        return response()->success($mentors);
     }
 }
