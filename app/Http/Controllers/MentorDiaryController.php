@@ -27,15 +27,22 @@ class MentorDiaryController
 
     public function show($diary_id)
     {
-        $contents = $this->diary->get($diary_id);
+        $contents = $this->diary->getDiary($diary_id);
 
         return response()->success($contents);
     }
 
-
     public function index()
     {
         $contents = $this->diary->all();
+
+        return response()->success($contents);
+    }
+
+    public function mentorArticles($mentor_srl)
+    {
+
+        $contents = $this->diary->userDiary($mentor_srl);
 
         return response()->success($contents);
     }

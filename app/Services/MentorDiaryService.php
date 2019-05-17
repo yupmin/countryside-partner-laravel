@@ -27,7 +27,7 @@ class MentorDiaryService implements DiaryInterface
         $this->mentorDiary->save();
     }
 
-    public function get(int $diary_srl)
+    public function getDiary($diary_srl)
     {
 
         return $this->mentorDiary->with('mentor')->find($diary_srl);
@@ -37,5 +37,11 @@ class MentorDiaryService implements DiaryInterface
     {
 
         return $this->mentorDiary->with('mentor')->orderBy('regdate', 'desc')->get();
+    }
+
+    public function userDiary($mentor_srl)
+    {
+        // TODO: Implement userDiary() method.
+        return $this->mentorDiary->orderBy('regdate', 'DESC')->paginate(15);
     }
 }

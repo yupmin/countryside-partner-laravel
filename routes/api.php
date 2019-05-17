@@ -54,13 +54,18 @@ Route::group(['prefix' => 'v1'], function () {
         'as' => 'mentors.mentor',
         'uses' => 'MentorController@index'
     ));
-    Route::get('diaries-mentors', array( //  멘토 - 영농일지 전체 조회
-        'as' => 'mentors.diaries.index',
+
+    Route::get('diaries-mentors/articles', array( //  멘토 - 영농일지 전체 조회
+        'as' => 'diaries-mentors.articles.index',
         'uses' => 'MentorDiaryController@index'
     ));
-    Route::get('diaries-mentors/{diary_id}', array( //  멘토 - 영농일지 선택 조회
-        'as' => 'mentors.diaries.show',
+    Route::get('diaries-mentors/articles/{diary_id}', array( //  멘토 - 영농일지 선택 조회
+        'as' => 'diaries-mentors.articles.show',
         'uses' => 'MentorDiaryController@show'
+    ));
+    Route::get('diaries-mentors/{mentor_srl}/articles', array( //  선택 된 멘토의 영농일지
+        'as' => 'mentors.diaries.mentor.articles.show',
+        'uses' => 'MentorDiaryController@mentorArticles'
     ));
 
 

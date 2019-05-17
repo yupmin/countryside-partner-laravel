@@ -8,6 +8,7 @@ interface DiaryInterface
 {
 
     public function create($formData);
-    public function get(int $diary_srl);
+    public function getDiary($diary_srl);
     public function all();
+    public function userDiary($user_srl);
 }

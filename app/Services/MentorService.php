@@ -32,42 +32,38 @@ class MentorService
     }
 
 
-    /**
-     * @param $mentor_srl
-     * @return Mentor|Mentor[]|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null
-     */
     public function getMentor($mentor_srl){
 
-        $mentor = Mentor::with(['diaries' => function ($query){
-
-            $query->orderBy('regdate', 'desc');//->paginate(15);
-
-        }])->find($mentor_srl);
-
-        $collection = collect($mentor);
-
-        $mentor = $collection->map(function ($item, $key) {
-
-            if($key == "diaries"){
-
-                foreach($item as $itemKey)
-                {
-                    $itemKey['contents'] = "hihddiasffsddsfadfdsfsdfsfasih";
-                    $item = $itemKey['contents'];
-//                    print_r($item);
-                }
-//                print_r($item);
-
-            }
-
-            return $item;
-
-        });
-
-
-
+        $mentor = Mentor::find($mentor_srl);
 
         return $mentor;
+
+//        $mentor = Mentor::with(['diaries' => function ($query){
+//
+//            $query->orderBy('regdate', 'desc');//->paginate(15);
+//
+//        }])->find($mentor_srl);
+//
+//        $collection = collect($mentor);
+//
+//        $mentor = $collection->map(function ($item, $key) {
+//
+//            if($key == "diaries"){
+//
+////                foreach($item as $itemKey)
+////                {
+////                    $itemKey['contents'] = "hihddiasffsddsfadfdsfsdfsfasih";
+////                    $item = $itemKey['contents'];
+//////                    print_r($item);
+////                }
+////                print_r($item);
+//
+//            }
+//
+//            return $item;
+//
+//        });
+
     }
 
 }
