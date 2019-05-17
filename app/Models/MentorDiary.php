@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class MentorDiary extends Model
 {
@@ -23,6 +24,13 @@ class MentorDiary extends Model
         return $this->belongsTo(Mentor::class, 'mentor_srl');
     }
 
+
+    public function getRegdateAttribute($value){
+
+        $regdate = Carbon::parse($value);
+
+        return $regdate->format('Y-m-d H:i');
+    }
 
 
 }
