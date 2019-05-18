@@ -61,7 +61,7 @@ class MentorDiaryService implements DiaryInterface
     public function userDiary($mentor_srl)
     {
         // TODO: Implement userDiary() method.
-        $mentorDiaries = $this->mentorDiary->orderBy('regdate', 'DESC')->paginate(3);
+        $mentorDiaries = $this->mentorDiary->where('mentor_srl', $mentor_srl)->orderBy('regdate', 'DESC')->paginate(15);
         $collection = collect($mentorDiaries);
 
         $diaries = $collection->map(function ($item, $key) {
