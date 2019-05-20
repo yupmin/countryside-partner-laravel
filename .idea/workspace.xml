@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1464d7d9-4ba3-4b2c-bc22-89577fd68dae" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Services/NoteInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/NoteService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Mentor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mentor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/MentorDiaryService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/MentorDiaryService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meteopark.create.database" beforeDir="false" afterPath="$PROJECT_DIR$/meteopark.create.database" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <ignored path="VillageExperience.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,43 +43,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/MentorDiaryService.php">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="76" selection-start-line="63" selection-start-column="76" selection-end-line="63" selection-end-column="76" />
+            <state relative-caret-position="716">
+              <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NoteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="61" column="50" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Mentor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="442">
+              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
               <folding>
-                <element signature="e#30#69#0#PHP" expanded="true" />
+                <element signature="e#40#79#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Mentee.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreNoteRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="476">
+              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
               <folding>
-                <element signature="e#30#69#0#PHP" expanded="true" />
+                <element signature="e#37#83#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -134,11 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/filesystems.php" />
-        <option value="$PROJECT_DIR$/meteopark.reference" />
-        <option value="$PROJECT_DIR$/app/Providers/AwsS3ServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Services/ProfileUpload.php" />
-        <option value="$PROJECT_DIR$/app/Services/FileUploadFactory.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MentoController.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/routes/apis/users/users_api.php" />
@@ -173,18 +170,23 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
         <option value="$PROJECT_DIR$/app/Models/Diary.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DiaryController.php" />
-        <option value="$PROJECT_DIR$/meteopark.create.database" />
         <option value="$PROJECT_DIR$/app/Services/DiaryService.php" />
         <option value="$PROJECT_DIR$/config/jwt.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MentorController.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Services/DiaryInterface.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MentorDiaryController.php" />
-        <option value="$PROJECT_DIR$/app/Models/MentorDiary.php" />
         <option value="$PROJECT_DIR$/app/Services/MentorService.php" />
         <option value="$PROJECT_DIR$/app/Services/MentorDiaryService.php" />
         <option value="$PROJECT_DIR$/app/Models/Mentor.php" />
+        <option value="$PROJECT_DIR$/app/Services/NoteInterface.php" />
+        <option value="$PROJECT_DIR$/app/Models/Note.php" />
+        <option value="$PROJECT_DIR$/app/Models/MentorDiary.php" />
+        <option value="$PROJECT_DIR$/app/Services/NoteService.php" />
+        <option value="$PROJECT_DIR$/meteopark.create.database" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/StoreNoteRequest.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/NoteController.php" />
       </list>
     </option>
   </component>
@@ -304,6 +306,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -328,6 +331,20 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
@@ -378,7 +395,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,20 +493,22 @@
       <workItem from="1558155648079" duration="1778000" />
       <workItem from="1558173561323" duration="2094000" />
       <workItem from="1558199589324" duration="687000" />
+      <workItem from="1558360297223" duration="2469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166050000" />
+    <option name="totallyTimeSpent" value="168519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1852" y="23" width="1852" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" id="Project" order="0" visible="true" weight="0.094475135" />
+      <window_info active="true" id="Project" order="0" visible="true" weight="0.1436464" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Thumbnails" weight="0.32953367" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3280255" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -515,86 +533,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/JWTGuard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/Guard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="566" column="24" selection-start-line="566" selection-start-column="24" selection-end-line="566" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/Exceptions/JWTException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AwsS3ServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/Contracts/JWTSubject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/HasDatabaseNotifications.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/Notifiable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/Providers/Auth/Illuminate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding>
-            <element signature="e#262#305#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -637,13 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -699,26 +630,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/DiaryFactory.php" />
     <entry file="file://$PROJECT_DIR$/app/Services/SingletonBindService.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreMentorRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-          <folding>
-            <element signature="e#37#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CustomGetUserToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Exceptions/MeteoException.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -760,51 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/FileUploadService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/MenteeService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="78" selection-start-line="22" selection-start-column="78" selection-end-line="22" selection-end-column="78" />
-          <folding>
-            <element signature="e#34#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meteopark.create.database">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="326" column="9" selection-start-line="326" selection-start-column="8" selection-end-line="326" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/DiaryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/MentorDiary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding>
-            <element signature="e#30#69#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,57 +688,211 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/HasDatabaseNotifications.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/Notifiable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="e#23#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreMentorDiaryRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreMentorRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <element signature="e#37#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/FileUploadService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MentorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state relative-caret-position="442">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="44" />
           <folding>
             <element signature="e#40#81#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/DiaryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/NoteInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Note.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/MentorDiaryService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Mentee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding>
+            <element signature="e#30#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/MentorService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="153">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding>
             <element signature="e#34#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/MentorDiaryService.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/MentorDiary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="76" selection-start-line="63" selection-start-column="76" selection-end-line="63" selection-end-column="76" />
+        <state relative-caret-position="510">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding>
+            <element signature="e#30#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/MenteeService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Mentor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="714">
+          <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
           <folding>
             <element signature="e#30#69#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Mentee.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CustomGetUserToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        <state relative-caret-position="595">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding>
-            <element signature="e#30#69#0#PHP" expanded="true" />
+            <element signature="e#40#62#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meteopark.create.database">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/NoteService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreMenteeRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreNoteRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="e#37#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="61" column="50" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="50" />
+        <state relative-caret-position="716">
+          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NoteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#79#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

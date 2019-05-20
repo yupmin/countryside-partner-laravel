@@ -70,15 +70,30 @@ regdate varchar(20) not null -- 등록일자
 
 
 
+-- 쪽지 리스트
+CREATE TABLE cp_notes(
+note_srl bigint not null primary key auto_increment,
+id bigint not null, -- 보내는 사람
+to_member_srl bigint not null, -- 받는사람
+user_type varchar(15) not null, -- MENTOR, MENTEE
+notes longtext not null, -- 내용
+is_read char(1) not null default 'N', -- 읽음 여부
+regdate varchar(20) not null -- 등록일자
+)ENGINE = innodb, CHARACTER SET = UTF8;
+
+
+
+
+
+
 -- 호미
 CREATE TABLE cp_homis(
 homi_srl bigint not null primary key auto_increment,
-member_type varchar(15) not null, -- mentors, mentee
+user_type varchar(15) not null, -- mentors, mentee
 homi int(10) not null default 0, -- 호미 갯수
 state varchar(10), -- 상태 (increment, decrement)
 regdate varchar(20) not null
 )ENGINE = innodb, CHARACTER SET = UTF8;
-
 
 
 

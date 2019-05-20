@@ -68,8 +68,6 @@ Route::group(['prefix' => 'v1'], function () {
         'uses' => 'MentorDiaryController@mentorArticles'
     ));
 
-
-
     Route::post('join/mentor', array( // 멘토 - 회원가입
         'as' => 'join.store',
         'uses' => 'MentorController@store'
@@ -77,6 +75,18 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('join/mentee', array( // 멘토 - 회원가입
         'as' => 'join.store',
         'uses' => 'MenteeController@store'
+    ));
+
+
+    // NEW API
+    Route::post('memo', array( // 쪽지보내기
+        'as' => 'memo',
+        'uses' => 'MentorController@store'
+    ));
+
+    Route::get('memo/', array( // 내 쪽지조회
+        'as' => 'memo',
+        'uses' => 'MentorController@index'
     ));
 
 
