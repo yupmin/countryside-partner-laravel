@@ -16,8 +16,15 @@ class OpenApiController extends Controller
 
     protected function machines(Request $request){
 
-        empty($request->param) ? $request->param = "" : $request->param;
-        return $this->callApi(self::API_GRID_MACHINES, $request->type, $request->param);
+        $params = "&CTPRVN=".urlencode($request->CTPRVN);
+
+        !empty($request->FCH_KND) ? $params .= "&FCH_KND=".urlencode($request->FCH_KND) : "" ;
+
+        $url = $this->api_call_url."/".$request->type."/".self::API_GRID_MACHINES."/1/100?YEAR=2014".$params;
+
+//        echo $url;exit;
+
+        return $this->callApiToJson($url);
     }
 
     protected function dictionary(Request $request){
@@ -25,10 +32,4 @@ class OpenApiController extends Controller
         return $this->callApi(self::API_GRID_DICTIONARY, $request->type, $request->param);
     }
 
-
-
-    protected function index(Request $request){
-
-        return $this->callApi($request->call, $request->type);
-    }
 }

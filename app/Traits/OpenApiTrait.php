@@ -23,15 +23,13 @@ trait OpenApiTrait
         $this->api_call_url = $this->api_endpoint."/".$this->api_key;
     }
 
-    public function callApi(string $grid, string $type = "json", string $param)
+    public function callApiToJson(string $url)
     {
-
-        return $this->curl($this->api_call_url."/".$type."/".$grid."/1/100".$param, $type);
+         return $this->getCurl($url);
     }
 
+    private function getCurl(string $url){
 
-    private function curl($url, $type){
-dd($url);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -40,24 +38,40 @@ dd($url);
         $response = curl_exec($ch);
         curl_close($ch);
 
-        if($type === "xml"){
-
-            $xml = simplexml_load_string($response);
-
-            $collection = collect( $this->xmlToArray($xml) );
-
-        }else{
-
-            $collection = $response;
-        }
-
-        return $collection;
-
+        return $response;
     }
 
 
 
 
+
+//    public function callApiToJson(string $url)
+//    {
+//
+//        $url = $this->api_call_url."/".$request->type."/".self::API_GRID_MACHINES."/1/100?YEAR=2014&";//.$param, $type
+//
+//
+//        $ch = curl_init();
+//        curl_setopt($ch, CURLOPT_URL, $url);
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+//        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+//        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+//        $response = curl_exec($ch);
+//        curl_close($ch);
+//
+//        if($type === "xml")
+//        {
+//            $xml = simplexml_load_string($response);
+//
+//            $collection = collect( $this->xmlToArray($xml) );
+//
+//        }else{
+//
+//            $collection = $response;
+//        }
+//
+//        return $collection;
+//    }
 
 
 
