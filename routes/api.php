@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 //});
 
 
+
 Route::group(['middleware' => 'jwt.auth.custom'], function () {
 
     Route::group(['prefix' => 'v1'], function () {
@@ -32,14 +33,35 @@ Route::group(['middleware' => 'jwt.auth.custom'], function () {
 });
 
 
+
+/*
+ --------------------------------------------------------------------------
+ | OPEN API CALL
+ --------------------------------------------------------------------------
+ */
+Route::get('openapi/machines', array( //
+    'as' => 'openapi.machines',
+    'uses' => 'OpenApiController@machines'
+));
+
+Route::get('openapi/dictionary', array( //
+    'as' => 'openapi.dictionary',
+    'uses' => 'OpenApiController@dictionary'
+));
+
+
+
+
+
+
+
 Route::group(['prefix' => 'v1'], function () {
+
 
     Route::get('main', array(
         'as' => 'main',
         'uses' => 'MainController@index'
     ));
-
-
 
     Route::get('mentors', array( // 멘토 - 전체 회원 조회
         'as' => 'mentors',
