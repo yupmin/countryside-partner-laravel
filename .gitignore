@@ -11,3 +11,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 meteopark.create.database
+.phpstorm.meta.php
+_ide_helper_models.php
+_ide_helper.php
