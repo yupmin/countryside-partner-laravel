@@ -20,24 +20,24 @@ class MentorController extends Controller
 
     protected function store(StoreMentorRequest $request){
 
-        $mentor = $this->mentor->create($request);
+        $mentorInfo = $this->mentor->create($request);
 
-        return response()->success($mentor);
+        return response()->success($mentorInfo);
     }
 
 
-    protected function index($mentor_srl){
+    protected function index(int $mentor_srl){
 
         if(request('is_diary') === "true")
         {
-            $mentor = $this->mentor->getMentor($mentor_srl);
+            $mentorInfo = $this->mentor->getMentor($mentor_srl);
 
         } else{
 
-            $mentor = Mentor::find($mentor_srl);
+            $mentorInfo = Mentor::find($mentor_srl);
         }
 
-        return response()->success($mentor);
+        return response()->success($mentorInfo);
     }
 
     protected function lists(){
