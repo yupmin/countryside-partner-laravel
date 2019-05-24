@@ -50,11 +50,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-
         if ($exception instanceof TokenExpiredException) {
+            // TODO : 이렇게 하지마세요. IDE 상에 노란색이면 뭔가 제대로 코딩 되지 않았다는 얘기입니다.
 
             return response()->custom_error_token($exception->getCode(), $exception->getMessage());
-
+        // TODO : PSR-2 보면 이렇게 코딩하지 말라고 나와 있을 껍니다.
         }else if($exception instanceof TokenInvalidException){
 
             return response()->custom_error_token($exception->getCode(), $exception->getMessage());
