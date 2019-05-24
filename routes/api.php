@@ -62,7 +62,6 @@ Route::group(['prefix' => 'v1'], function () {
         'as' => 'main',
         'uses' => 'MainController@index'
     ));
-
     Route::get('mentors', array( // 멘토 - 전체 회원 조회
         'as' => 'mentors',
         'uses' => 'MentorController@lists'
@@ -95,13 +94,14 @@ Route::group(['prefix' => 'v1'], function () {
     ));
 
 
+
+
     // NEW API
     Route::post('memo', array( // 쪽지보내기
         'as' => 'memo',
         'uses' => 'MentorController@store'
     ));
-
-    Route::get('memo/', array( // 내 쪽지조회
+    Route::get('memo/{user_id}', array( // 내 쪽지조회
         'as' => 'memo',
         'uses' => 'MentorController@index'
     ));

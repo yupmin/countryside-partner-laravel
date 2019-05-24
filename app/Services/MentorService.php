@@ -7,7 +7,7 @@ namespace App\Services;
 use App\Models\Mentor;
 use JWTAuth;
 
-class MentorService
+class MentorService implements MentorInterface
 {
 
     private $fileUploadService;
@@ -21,7 +21,11 @@ class MentorService
         $this->fileUploadService = $fileUploadService;
     }
 
-    public function create($mentorData)
+    /**
+     * @param Object $mentorData
+     * @return \Illuminate\Support\Collection
+     */
+    public function create(Object $mentorData)
     {
         $mentorDataArr = $mentorData->all();
         $mentorDataArr['profile_image'] = $this->fileUploadService->profileUpload($mentorData->file('profile_image'));
@@ -32,38 +36,15 @@ class MentorService
     }
 
 
-    public function getMentor($mentor_srl){
+    /**
+     * @param int $mentor_srl
+     * @return mixed
+     */
+    public function getMentor(int $mentor_srl){
 
         $mentor = Mentor::find($mentor_srl);
 
         return $mentor;
-
-//        $mentor = Mentor::with(['diaries' => function ($query){
-//
-//            $query->orderBy('regdate', 'desc');//->paginate(15);
-//
-//        }])->find($mentor_srl);
-//
-//        $collection = collect($mentor);
-//
-//        $mentor = $collection->map(function ($item, $key) {
-//
-//            if($key == "diaries"){
-//
-////                foreach($item as $itemKey)
-////                {
-////                    $itemKey['contents'] = "hihddiasffsddsfadfdsfsdfsfasih";
-////                    $item = $itemKey['contents'];
-//////                    print_r($item);
-////                }
-////                print_r($item);
-//
-//            }
-//
-//            return $item;
-//
-//        });
-
     }
 
 }

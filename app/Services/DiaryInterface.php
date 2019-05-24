@@ -7,8 +7,26 @@ namespace App\Services;
 interface DiaryInterface
 {
 
-    public function create($formData);
-    public function getDiary($diary_srl);
+    /**
+     * @param Object $formData
+     * @return mixed
+     */
+    public function create(Object $formData);
+
+    /**
+     * @param int $diary_srl
+     * @return mixed
+     */
+    public function getDiary(int $diary_srl);
+
+    /**
+     * @return mixed
+     */
     public function all();
-    public function userDiary($user_srl);
+
+    /**
+     * @param int $user_srl
+     * @return mixed
+     */
+    public function userDiary(int $user_srl);
 }

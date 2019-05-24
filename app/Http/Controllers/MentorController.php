@@ -5,24 +5,22 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMentorRequest;
 use App\Models\Mentor;
 
-
-use App\Services\MentorService;
-use Illuminate\Http\Request;
+use App\Services\MentorInterface;
 
 
 class MentorController extends Controller
 {
 
-    private $mentorService;
+    private $mentor;
 
-    public function __construct(MentorService $mentorService)
+    public function __construct(MentorInterface $mentor)
     {
-        $this->mentorService = $mentorService;
+        $this->mentor = $mentor;
     }
 
     protected function store(StoreMentorRequest $request){
 
-        $mentor = $this->mentorService->create($request);
+        $mentor = $this->mentor->create($request);
 
         return response()->success($mentor);
     }
@@ -32,7 +30,7 @@ class MentorController extends Controller
 
         if(request('is_diary') === "true")
         {
-            $mentor = $this->mentorService->getMentor($mentor_srl);
+            $mentor = $this->mentor->getMentor($mentor_srl);
 
         } else{
 

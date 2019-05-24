@@ -4,27 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMenteeRequest;
 use App\Models\Mentee;
+use App\Services\MenteeInterface;
 use App\Services\MenteeService;
 use Illuminate\Http\Request;
 use JWTAuth;
 
 class MenteeController extends Controller
 {
-    protected function store(StoreMenteeRequest $request, MenteeService $menteeService){
 
-        $mentor = $menteeService->create($request);
+    private $mentee;
 
-        return response()->success($mentor);
+    public function __construct(MenteeInterface $mentee)
+    {
+        $this->mentee = $mentee;
+    }
+
+
+    /**
+     * @param StoreMenteeRequest $request
+     * @return mixed
+     */
+    protected function store(StoreMenteeRequest $request){
+
+        $menteeInfo = $this->mentee->create($request);
+
+        return response()->success($menteeInfo);
 
     }
 
 
-    protected function index($mentee){
-
-        $mentee = Mentee::findOrFail($mentee);
-        return response()->success($mentee);
-    }
-
+    /**
+     * @return mixed
+     */
     protected function lists(){
 
         $mentees = Mentee::all();
