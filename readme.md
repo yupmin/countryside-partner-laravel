@@ -1,2 +1,2 @@
-# VillageExperience
-농어촌 체험마을 정보
+# countryside-partner-laravel
+토이프로젝트 진행 중 입니다.
