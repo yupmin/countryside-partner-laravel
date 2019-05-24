@@ -22,17 +22,20 @@ class Mentor extends Model implements JWTSubject
 
     protected $hidden = ['password', 'phone'];
 
-    public function setPasswordAttribute($value){
-
+    /** mutators */
+    public function setPasswordAttribute($value)
+    {
         $this->attributes['password'] = Hash::make($value);
     }
 
-    public function setPhoneAttribute($value){
-
+    public function setPhoneAttribute($value)
+    {
         $this->attributes['phone'] = encrypt($value);
     }
 
-    public function diaries(){
+    public function diaries()
+    {
+        // TODO : mentor 테이블의 프라이머리 키가 mentor_srl 인데 흠.... 이게 integer 인가요?
 
         return $this->hasMany(MentorDiary::class, 'mentor_srl');
     }
