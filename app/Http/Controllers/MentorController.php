@@ -4,47 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMentorRequest;
 use App\Models\Mentor;
-
-use App\Services\MentorInterface;
-
+use App\Services\FileUploadService;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class MentorController extends Controller
 {
+    /** @var FileUploadService */
+    private $fileUploadService;
 
-    private $mentor;
-
-    public function __construct(MentorInterface $mentor)
+    public function __construct(FileUploadService $fileUploadService)
     {
-        $this->mentor = $mentor;
+        $this->fileUploadService = $fileUploadService;
     }
 
-    protected function store(StoreMentorRequest $request){
-
-        $mentorInfo = $this->mentor->create($request);
-
-        return response()->success($mentorInfo);
-    }
-
-
-    protected function index(int $mentor_srl){
-
-        if(request('is_diary') === "true")
-        {
-            $mentorInfo = $this->mentor->getMentor($mentor_srl);
-
-        } else{
-
-            $mentorInfo = Mentor::find($mentor_srl);
-        }
-
-        return response()->success($mentorInfo);
-    }
-
-    protected function lists(){
-
+    protected function index()
+    {
         $mentors = Mentor::all();
-        return response()->success($mentors);
+
+        return $mentors;
     }
 
+    protected function store(StoreMentorRequest $request)
+    {
+        $data = $request->all();
+        $data['profile_image'] = $this->fileUploadService->profileUpload($data->file('profile_image'));
+        $mentor = Mentor::create($data);
+        $mentor->setAttribute('token', JWTAuth::fromUser($mentor));
 
+        return $mentor;
+    }
+
+    protected function view(Mentor $mentor)
+    {
+        return $mentor;
+    }
 }

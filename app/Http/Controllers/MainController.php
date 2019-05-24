@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    protected function index()
+    const PER_PAGE = 8;
+
+    public function index()
     {
         $mentors = Mentor::inRandomOrder()
-            ->limit(8)
+            ->limit(static::PER_PAGE)
             ->get();
 
         return $mentors;

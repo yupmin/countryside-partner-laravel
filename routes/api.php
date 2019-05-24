@@ -49,26 +49,18 @@ Route::get('openapi/dictionary', array( //
     'uses' => 'OpenApiController@dictionary'
 ));
 
-
-
-
-
-
-
 Route::group(['prefix' => 'v1'], function () {
-
-
     Route::get('main', array(
         'as' => 'main',
         'uses' => 'MainController@index'
     ));
     Route::get('mentors', array( // 멘토 - 전체 회원 조회
         'as' => 'mentors',
-        'uses' => 'MentorController@lists'
-    ));
-    Route::get('mentors/{mentor_srl}', array( // 멘토 - 프로필 조회
-        'as' => 'mentors.mentor',
         'uses' => 'MentorController@index'
+    ));
+    Route::get('mentors/{mentor_id}', array( // 멘토 - 프로필 조회
+        'as' => 'mentors.mentor',
+        'uses' => 'MentorController@view'
     ));
 
     Route::get('diaries-mentors/articles', array( //  멘토 - 영농일지 전체 조회
@@ -93,9 +85,6 @@ Route::group(['prefix' => 'v1'], function () {
         'uses' => 'MenteeController@store'
     ));
 
-
-
-
     // NEW API
     Route::post('memo', array( // 쪽지보내기
         'as' => 'memo',
@@ -105,9 +94,6 @@ Route::group(['prefix' => 'v1'], function () {
         'as' => 'memo',
         'uses' => 'MentorController@index'
     ));
-
-
-
 });
 
 
