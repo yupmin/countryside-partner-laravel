@@ -70,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -295,10 +295,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="49" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="51" />
     <option name="y" value="23" />
-    <option name="width" value="1231" />
+    <option name="width" value="1229" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -315,80 +315,6 @@
             <path>
               <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
               <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Traits" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="countryside-partner-laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="countryside-partner-laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -524,17 +450,18 @@
       <workItem from="1558535304875" duration="4709000" />
       <workItem from="1558615848792" duration="500000" />
       <workItem from="1558617528907" duration="8000" />
+      <workItem from="1558688323870" duration="32000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180638000" />
+    <option name="totallyTimeSpent" value="180670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="23" width="1229" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" id="Project" order="0" visible="true" weight="0.22072451" />
+      <window_info active="true" id="Project" order="0" visible="true" weight="0.22409436" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -913,7 +840,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
