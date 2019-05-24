@@ -1,60 +1,55 @@
 <?php
 
-
 namespace App\Services;
 
+use Illuminate\Http\UploadedFile;
 use Storage;
 
 class FileUploadService
 {
-
-    const STORAGE_TYPE_PROFILE = "profiles";
-    const STORAGE_TYPE_CONTENTS = "contents";
+    const STORAGE_TYPE_PROFILE = "profile";
+    const STORAGE_TYPE_CONTENT = "content";
 
     private $extensions = [
-        'jpg', 'jpeg', 'png'
+        'jpg',
+        'jpeg',
+        'png',
     ];
 
-    /**
-     * @param object $reqFile
-     * @return string|null
-     */
-    public function profileUpload(object $reqFile = null)
+    public function uploadProfile(?UploadedFile $file): ?string
     {
-        if(!is_null($reqFile))
-        {
-            return $this->uploadToStorage(self::STORAGE_TYPE_PROFILE, $reqFile);
+        if (is_null($file)) {
+            return null;
         }
+
+        return $this->uploadToStorage(self::STORAGE_TYPE_PROFILE, $file);
     }
 
-    public function contentsUpload(object $reqFile = null)
+    public function uploadContent(?UploadedFile $file): ?string
     {
-        if(!is_null($reqFile))
-        {
-
-            return $this->uploadToStorage(self::STORAGE_TYPE_CONTENTS, $reqFile);
+        if (!is_null($file)) {
+            return null;
         }
+
+        return $this->uploadToStorage(self::STORAGE_TYPE_CONTENT, $file);
     }
 
-    public function uploadToStorage(string $path, object $file)
+    public function uploadToStorage(string $storageType, UploadedFile $file): ?string
     {
         $filePath = null;
 
-        if( $this->arrowExtension( $file->getClientOriginalExtension() )){
-
-            $filePath = $path ."/". time().$file->getClientOriginalName();
+        if ($this->arrowExtension($file->getClientOriginalExtension())) {
+            $filePath = $storageType . '/' . time() . $file->getClientOriginalName();
             Storage::disk('ncloud')->put($filePath, file_get_contents($file));
-
-        } else{
-
+        } else {
             $filePath = "File not allowed";
         }
 
         return $filePath;
     }
 
-    public function arrowExtension(string $extension){
-
+    public function arrowExtension(string $extension): bool
+    {
         return collect($this->extensions)->search(strtolower($extension));
     }
 }

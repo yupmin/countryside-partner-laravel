@@ -21,7 +21,7 @@ class MenteeController extends Controller
     {
         $data = $request->all();
 
-        $data['profile_image'] = $this->fileUploadService->profileUpload($request->file('profile_image'));
+        $data['profile_image'] = $this->fileUploadService->uploadProfile($request->file('profile_image'));
         $mentee = Mentee::create($data);
         $mentee->setAttribute('token', JWTAuth::fromUser($mentee));
 

@@ -27,7 +27,7 @@ class MentorController extends Controller
     protected function store(StoreMentorRequest $request)
     {
         $data = $request->all();
-        $data['profile_image'] = $this->fileUploadService->profileUpload($data->file('profile_image'));
+        $data['profile_image'] = $this->fileUploadService->uploadProfile($request->file('profile_image'));
         $mentor = Mentor::create($data);
         $mentor->setAttribute('token', JWTAuth::fromUser($mentor));
 
